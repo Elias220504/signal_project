@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
+//implements the interface output strategy to create a file, set the filepath, and write the data of the chosen patient ID,{...}. 
 public class fileOutputStrategy implements OutputStrategy {
 
     private String BaseDirectory;

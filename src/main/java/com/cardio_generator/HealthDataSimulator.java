@@ -32,7 +32,7 @@ public class HealthDataSimulator {
     private static OutputStrategy outputStrategy = new ConsoleOutputStrategy(); // Default output strategy
     private static final Random random = new Random();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { 
 
         parseArguments(args);
 
@@ -44,7 +44,7 @@ public class HealthDataSimulator {
         scheduleTasksForPatients(patientIds);
     }
 
-    private static void parseArguments(String[] args) throws IOException {
+    private static void parseArguments(String[] args) throws IOException { // allows the user to choose the output method. also allows to specify the number of patients, and can print help in the -h case
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "-h":
@@ -105,7 +105,7 @@ public class HealthDataSimulator {
         }
     }
 
-    private static void printHelp() {
+    private static void printHelp() { //this is the help that will be printed in -h case
         System.out.println("Usage: java HealthDataSimulator [options]");
         System.out.println("Options:");
         System.out.println("  -h                       Show help and exit.");
@@ -122,7 +122,7 @@ public class HealthDataSimulator {
                 "  This command simulates data for 100 patients and sends the output to WebSocket clients connected to port 8080.");
     }
 
-    private static List<Integer> initializePatientIds(int patientCount) {
+    private static List<Integer> initializePatientIds(int patientCount) { 
         List<Integer> patientIds = new ArrayList<>();
         for (int i = 1; i <= patientCount; i++) {
             patientIds.add(i);
@@ -130,7 +130,7 @@ public class HealthDataSimulator {
         return patientIds;
     }
 
-    private static void scheduleTasksForPatients(List<Integer> patientIds) {
+    private static void scheduleTasksForPatients(List<Integer> patientIds) { // generates random data on the patient
         ECGDataGenerator ecgDataGenerator = new ECGDataGenerator(patientCount);
         BloodSaturationDataGenerator bloodSaturationDataGenerator = new BloodSaturationDataGenerator(patientCount);
         BloodPressureDataGenerator bloodPressureDataGenerator = new BloodPressureDataGenerator(patientCount);

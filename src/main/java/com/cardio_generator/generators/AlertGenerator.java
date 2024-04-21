@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.cardio_generator.outputs.OutputStrategy;
 
-public class AlertGenerator implements PatientDataGenerator {
+public class AlertGenerator implements PatientDataGenerator { //This is a random generator of alerts with either an alert or not, and a probability of alert triggering during a certain time period
 
     public static final Random randomGenerator = new Random();
     private boolean[] AlertStates; // false = resolved, true = pressed
